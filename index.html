@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Catalog</title>   
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-6">
+    <div class="container mx-auto">
+        <h1 class="text-2xl font-bold mb-4">Data Catalog</h1>
+        <table class="table-auto border-collapse border bg-white shadow-md">
+            <thead>
+                <tr class="bg-gray-200">
+                    <th class="px-4 py-2">No</th>
+                    <th class="px-4 py-2">Name of Product</th>
+                    <th class="px-4 py-2">Type Of Product</th>
+                    <th class="px-4 py-2">Format of the product</th>
+                    <th class="px-4 py-2">Coordinate System</th>
+                    <th class="px-4 py-2">Area covered</th>
+                    <th class="px-4 py-2">Year of preparation and revision</th>
+                    <th class="px-4 py-2">Data Volume / File Size</th>
+                    <th class="px-4 py-2">Security Classification</th>
+                    <th class="px-4 py-2">Sample</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">               
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // Replace this URL with the URL of your JSON data.
+        const url = 'https://script.googleusercontent.com/macros/echo?user_content_key=GRFHcF8x-WxxO6S8SmVfv64sbmvwIhNbtiV4f9Edhx4SBRLDvJvsKmz2OULbPiJNTu6gt78iHRdi-d9a22cuhrWHVCxoTVYGm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnFg9K4nM3Bzh8W5s4PNck4b7uoeuFNTQ4VRJJWh37hqBQ984uk_-sVBy-8tg-SrCHGNPxLHXXjTVJVZ6c98AOXapKma0sqCNiNz9Jw9Md8uu&lib=MlJWHtyeG9r8bnVJ5OulxrzjTIsJQ4YSz';
+        
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                const tableBody = document.getElementById('table-body');
+                data.forEach(item => {
+                    const row = document.createElement('tr');
+                    row.classList.add('border-b', 'hover:bg-gray-100');
+                    for (const key in item) {
+                        if (item.hasOwnProperty(key)) {
+                            const cell = document.createElement('td');
+                            cell.classList.add('px-4', 'py-2');
+                            cell.textContent = item[key];
+                            row.appendChild(cell);
+                        }
+                    }
+                    tableBody.appendChild(row);
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching JSON data:', error);
+            });
+    </script>
+</body>
+</html>
