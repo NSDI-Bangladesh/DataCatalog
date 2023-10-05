@@ -6,6 +6,7 @@
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css"
       rel="stylesheet"
     />
+
     <style>
       thead {
         position: sticky;
@@ -16,10 +17,14 @@
   <body class="bg-gray-100 p-6">
     <div class="container mx-auto">
       <h1 class="text-2xl font-bold mb-4">Data Catalog</h1>
+      <select id="select2" class="select2" name="Organizatin">
+        <option value="">Select Name of Product</option>
+      </select>
       <table class="table-auto border-collapse border bg-white shadow-md">
         <thead>
           <tr class="bg-gray-200">
             <th class="px-4 py-2">No</th>
+            <th class="px-4 py-2">Organization</th>
             <th class="px-4 py-2">Name of Product</th>
             <th class="px-4 py-2">Type Of Product</th>
             <th class="px-4 py-2">Format of the product</th>
@@ -39,36 +44,69 @@
       </table>
     </div>
 
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
     <script>
+      $(document).ready(function () {
+        $(".select2").select2();
+      });
+
       // Replace this URL with the URL of your JSON data.
       const url =
-        "https://script.googleusercontent.com/macros/echo?user_content_key=GRFHcF8x-WxxO6S8SmVfv64sbmvwIhNbtiV4f9Edhx4SBRLDvJvsKmz2OULbPiJNTu6gt78iHRdi-d9a22cuhrWHVCxoTVYGm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnFg9K4nM3Bzh8W5s4PNck4b7uoeuFNTQ4VRJJWh37hqBQ984uk_-sVBy-8tg-SrCHGNPxLHXXjTVJVZ6c98AOXapKma0sqCNiNz9Jw9Md8uu&lib=MlJWHtyeG9r8bnVJ5OulxrzjTIsJQ4YSz";
-      const loadingDiv = document.querySelector(".loading");
-
-      fetch(url)
-        .then((response) => response.json())
-        .then((data) => {
-          const tableBody = document.getElementById("table-body");
-          data.forEach((item) => {
-            const row = document.createElement("tr");
-            row.classList.add("border-b", "hover:bg-gray-100");
-            for (const key in item) {
-              if (item.hasOwnProperty(key)) {
-                const cell = document.createElement("td");
-                cell.classList.add("px-4", "py-2");
-                cell.textContent = item[key];
-                row.appendChild(cell);
+      "https://script.googleusercontent.com/macros/echo?user_content_key=GRFHcF8x-WxxO6S8SmVfv64sbmvwIhNbtiV4f9Edhx4SBRLDvJvsKmz2OULbPiJNTu6gt78iHRdi-d9a22cuhrWHVCxoTVYGm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnFg9K4nM3Bzh8W5s4PNck4b7uoeuFNTQ4VRJJWh37hqBQ984uk_-sVBy-8tg-SrCHGNPxLHXXjTVJVZ6c98AOXapKma0sqCNiNz9Jw9Md8uu&lib=MlJWHtyeG9r8bnVJ5OulxrzjTIsJQ4YSz";
+    const loadingDiv = document.querySelector(".loading");
+    
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        const tableBody = document.getElementById("table-body");
+        const productNames = new Set(); // Use Set to store unique product names
+    
+        data.forEach((item) => {
+          const row = document.createElement("tr");
+          row.classList.add("border-b", "hover:bg-gray-100");
+    
+          for (const key in item) {
+            if (item.hasOwnProperty(key)) {
+              const cell = document.createElement("td");
+              cell.classList.add("px-4", "py-2");
+              cell.textContent = item[key];
+              row.appendChild(cell);
+    
+              if (key === "Name of Product") {
+                productNames.add(item[key]); // Store unique product names
               }
             }
-
-            tableBody.appendChild(row);
-          });
-
-          loadingDiv.style.display = "none";
-        })
-        .catch((error) => {
-          console.error("Error fetching JSON data:", error);
+          }
+    
+          tableBody.appendChild(row);
         });
+
+            
+        // Convert Set of product names to an array for Select2
+        const productNamesArray = Array.from(productNames);
+
+           
+        // Initialize Select2 on a dropdown element
+        $(".select2").select2({
+          data: productNamesArray.map((name) => ({ id: name, text: name })),
+        });
+    
+        loadingDiv.style.display = "none";
+      })
+      .catch((error) => {
+        console.error("Error fetching JSON data:", error);
+      });
+    
     </script>
   </body>
 </html>
