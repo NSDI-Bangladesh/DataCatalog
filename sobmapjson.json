@@ -6,11 +6,11 @@
         "label": "Thematic Map",
         "children": [
           {
-            "label": "BD Administrative Map",
+            "label": "BD Administrative & Communication Map",
             "file": "MAP-CATALOG/Open%20Series%20Map/Thematic%20Map/BD%20Administrative%20map/BD_Administrative%202018_1000K.pdf"
           },
           {
-            "label": "Communication Map 1000K",
+            "label": "BD Map With Maritime Boundary",
             "file": "MAP-CATALOG/Open%20Series%20Map/Thematic%20Map/Commmunication%20Map_1000K/COM_MAP_MERITIME_2018.pdf"
           },
           {
