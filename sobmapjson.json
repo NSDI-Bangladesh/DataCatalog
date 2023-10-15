@@ -1,0 +1,127 @@
+[
+  {
+    "label": "Open Series Map",
+    "children": [
+      {
+        "label": "Thematic Map",
+        "children": [
+          {
+            "label": "BD Administrative Map",
+            "file": "MAP-CATALOG/Open%20Series%20Map/Thematic%20Map/BD%20Administrative%20map/BD_Administrative%202018_1000K.pdf"
+          },
+          {
+            "label": "Communication Map 1000K",
+            "file": "MAP%20CATALOG/Open%20Series%20Map/Thematic%20Map/Commmunication%20Map_1000K/COM_MAP_MERITIME_2018.pdf"
+          },
+          {
+            "label": "Divisional Map",
+            "children": [
+              {
+                "label": "Barishal",
+                "file": "MAP-CATALOG/Open%20Series%20Map/Thematic%20Map/Divisional%20Map/BARISAL_DIVISION_06_12_17.pdf"
+              },
+              {
+                "label": "Chattogram",
+                "file": "MAP-CATALOG/Open%20Series%20Map/Thematic%20Map/Divisional%20Map/Chittagong_Division_06.12.17.pdf"
+              },
+              {
+                "label": "Dhaka",
+                "file": "MAP-CATALOG/Open%20Series%20Map/Thematic%20Map/Divisional%20Map/Dhaka_Division_%2006%20_12%20_2017.pdf"
+              },
+              {
+                "label": "Khulna",
+                "file": "MAP-CATALOG/Open%20Series%20Map/Thematic%20Map/Divisional%20Map/KHULNA_DIVI_06.12.17.pdf"
+              },
+              {
+                "label": "Mymensingh",
+                "file": "MAP-CATALOG/Open%20Series%20Map/Thematic%20Map/Divisional%20Map/Mymensingh%20Division_06%20_12%20_2017.pdf"
+              },
+              {
+                "label": "Rajshahi",
+                "file": "MAP-CATALOG/Open%20Series%20Map/Thematic%20Map/Divisional%20Map/Rajshahi_Division_06_12_17.pdf"
+              },
+              {
+                "label": "Rangpur",
+                "file": "MAP-CATALOG/Open%20Series%20Map/Thematic%20Map/Divisional%20Map/Rangpur_Division_06_12_2017.pdf"
+              },
+              {
+                "label": "Sylhet",
+                "file": "MAP-CATALOG/Open%20Series%20Map/Thematic%20Map/Divisional%20Map/Sylhet%20Division_06_12_2017.pdf"
+              }
+            ]
+          },
+          {
+            "label": "District Map",
+            "children": [
+              {
+                "label": "Coxesbazar",
+                "file": "MAP-CATALOG/Open%20Series%20Map/Thematic%20Map/District%20Map/COXSBAZAR_DISTRICT_For%20CTP_23-04-18-1.jpg"
+              },
+              {
+                "label": "Gopalganj",
+                "file": "MAP-CATALOG/Open%20Series%20Map/Thematic%20Map/District%20Map/Gopalganj_District-11-06-18-1.jpg"
+              },
+              {
+                "label": "Bhola",
+                "file": "MAP-CATALOG/Open%20Series%20Map/Thematic%20Map/District%20Map/BHOLA_DISTRICT_06_12_17.pdf"
+              },
+              {
+                "label": "Khulna",
+                "file": "MAP-CATALOG/Open%20Series%20Map/Thematic%20Map/District%20Map/KHU_56_Model_Map-1.jpg"
+              }
+            ]
+          },
+          {
+            "label": "Upazila Map",
+            "children": []
+          },
+          {
+            "label": "Guid Map",
+            "children": [
+              {
+                "label": "Dhaka North",
+                "file": "MAP-CATALOG/Open%20Series%20Map/Thematic%20Map/Guide%20Map/Dhaka_Guide_Map_North.pdf"
+              },
+              {
+                "label": "Dhaka South",
+                "file": "MAP-CATALOG/Open%20Series%20Map/Thematic%20Map/Guide%20Map/Dhaka_Guide_Map_South.pdf"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Topographical Map",
+
+        "children": [
+          {
+            "label": "1:5K Topo Map",
+
+            "children": [
+              { "label": "Dhaka" },
+              { "label": "Chattogram" },
+              { "label": "Khulna" },
+              { "label": "Rajshahi" },
+              { "label": "Rangpur" },
+              { "label": "Sylhet" }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "Restricted or Spatial Map",
+    "children": [
+      {
+        "label": "Submenu 1",
+        "children": [
+          {
+            "label": "Sub-submenu 1",
+            "children": [{ "label": "Item 1" }, { "label": "Item 2" }]
+          }
+        ]
+      }
+    ]
+  }
+]
