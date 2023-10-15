@@ -11,7 +11,7 @@
           },
           {
             "label": "Communication Map 1000K",
-            "file": "MAP%20CATALOG/Open%20Series%20Map/Thematic%20Map/Commmunication%20Map_1000K/COM_MAP_MERITIME_2018.pdf"
+            "file": "MAP-CATALOG/Open%20Series%20Map/Thematic%20Map/Commmunication%20Map_1000K/COM_MAP_MERITIME_2018.pdf"
           },
           {
             "label": "Divisional Map",
@@ -60,10 +60,6 @@
               {
                 "label": "Gopalganj",
                 "file": "MAP-CATALOG/Open%20Series%20Map/Thematic%20Map/District%20Map/Gopalganj_District-11-06-18-1.jpg"
-              },
-              {
-                "label": "Bhola",
-                "file": "MAP-CATALOG/Open%20Series%20Map/Thematic%20Map/District%20Map/BHOLA_DISTRICT_06_12_17.pdf"
               },
               {
                 "label": "Khulna",
